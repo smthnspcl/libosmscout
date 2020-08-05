@@ -262,17 +262,25 @@ void LocationInfoModel::onLocationDescription(const osmscout::GeoCoord location,
     // just debug
     osmscout::LocationAtPlaceDescriptionRef atAddressDescription=description.GetAtAddressDescription();
     if (atAddressDescription) {
-        
         osmscout::Place place = atAddressDescription->GetPlace();
+        emit foundLocationInfo(atAddressDescription->IsAtPlace(),
+                               QString::fromStdString(place.GetAdminRegion()->name),
+                               QString::fromStdString(place.GetPostalArea()->name),
+                               QString::fromStdString(place.GetLocation()->name),
+                               QString::fromStdString(place.GetAddress()->name)
+                               );
         
         if (atAddressDescription->IsAtPlace()){
-            qDebug() << "Place " << QString::fromStdString(location.GetDisplayText()) << " description: " 
-                     << QString::fromStdString(place.GetDisplayString()); 
+
+            // qDebug() << "Place " << QString::fromStdString(location.GetDisplayText()) << " description: "
+            //         << QString::fromStdString(place.GetDisplayString());
         }else{
-            qDebug() << "Place " << QString::fromStdString(location.GetDisplayText()) << " description: " 
+            /*
+            qDebug() << "Place " << QString::fromStdString(location.GetDisplayText()) << " description: "
                      << atAddressDescription->GetDistance().AsMeter() << " m "
                      << QString::fromStdString(atAddressDescription->GetBearing().LongDisplayString()) << " from "
                      << QString::fromStdString(place.GetDisplayString());
+                     */
         }
     }else{
         qWarning() << "No place description found for " << QString::fromStdString(location.GetDisplayText()) << "";

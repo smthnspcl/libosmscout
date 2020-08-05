@@ -50,6 +50,7 @@ signals:
     void locationDescriptionRequested(const osmscout::GeoCoord location);
     void readyChange(bool ready);
     void regionLookupRequested(osmscout::GeoCoord);
+    void foundLocationInfo(bool atPlace, const QString city, const QString postal, const QString street, const QString houseNr);
 
 public slots:
     void setLocation(const double lat, const double lon);
