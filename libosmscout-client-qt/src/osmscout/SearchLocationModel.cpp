@@ -168,7 +168,7 @@ void LocationListModel::onSearchResult(const QString searchPattern,
     // qDebug() << "Put " << location.getLabel() << " to position: " << position;
 
     emit endInsertRows();
-  }  
+  }
   emit countChanged(locations.size());
   qDebug() << "added " << foundLocations.size() << " (in " << timer.elapsed() << " ms), model size" << locations.size();
 }
