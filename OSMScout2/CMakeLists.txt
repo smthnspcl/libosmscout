@@ -107,6 +107,7 @@ target_link_libraries(OSMScout2
 	Qt5::Widgets
 	Qt5::Qml
 	Qt5::Quick
+	Qt5::Positioning
 	OSMScoutMapQt
 	OSMScoutClientQt
 	OSMScoutGPX

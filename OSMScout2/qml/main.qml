@@ -5,7 +5,7 @@ import QtQuick.Layouts 1.1
 import QtQuick.Controls.Styles 1.1
 import QtQuick.Window 2.0
 
-import QtPositioning 5.2
+import QtPositioning 5.12
 
 import net.sf.libosmscout.map 1.0
 
